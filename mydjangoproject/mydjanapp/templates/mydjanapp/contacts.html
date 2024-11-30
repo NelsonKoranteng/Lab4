@@ -1,0 +1,48 @@
+{% load static %} <!-- Load static tag -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts - Contacts Manager</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Contacts Manager - Contacts Page</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li class="active"><a href="/contacts/">Contacts</a></li>
+                <li><a href="/help/">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Contact List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in contacts %}
+                <tr>
+                    <td>{{ contact.first_name }}</td>
+                    <td>{{ contact.last_name }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>{{ contact.phone }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2024 Contacts Manager</p>
+    </footer>
+</body>
+</html>
